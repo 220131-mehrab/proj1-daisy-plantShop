@@ -1,63 +1,39 @@
-var welcomeMsg = 'Welcome to the Plant Shop!'
-
-document.querySelector('h1').innerText = welcomeMsg
+var welcomeMsg = 'Welcome to the Plant Nursery!';
+document.querySelector('h1').innerText = welcomeMsg;
 
 fetch('/plants').then(resp => resp.json()).then(plants => {
-    document.querySelector('body').innerHTML = listPlants(plants);
+    document.querySelector('#plants').innerHTML = listPlants(plants);
     }
 );
 
-let listPlants = function(plant) {
-    return '<p>' + plants.plantId + ": " + plant.name + '</p>';
-}
-
 function listPlants(json) {
-    return `
-        <div id="plantsList">
-            ${json.map(listPlants).join('/n')}
-        </div>
-    `
+    return `${json.map(listPlant).join('/n')}`;
+};
+
+let listPlant = function(plant) {
+    return '<p>' + plant.plantId + ": " + plant.name + '</p>';
+};
+
+function postPlant() {
+    let plant = {
+        "plantId":document.getElementById("plantId").value,
+        "name": document.getElementById("name").value
+    }
+    console.log(plant);
+    fetch("/plants", {
+        method: "POST",
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(plant)
+    }).then((result) => {
+        if (result.status != 200) {
+            throw new Error("Bad Server Response");
+        }
+        console.log(result.text());
+    }).catch((error) => { console.log(error); })
+    fetch('/plants').then(resp => resp.json()).then(plants => {
+        document.querySelector('#plants').innerHTML = listPlants(plants);
+    });
 }
-
-
-
-// function get(url) {
-//     return new Promise(function (resolve, reject) {
-//         var req = new XMLHttpRequest();
-//         req.open('GET', '/plants');
-//         req.onload = function() {
-//             if (req.status == 200) {
-//                 resolve(req.response);
-//             } else {
-//                 reject(Error(req.statusText));
-//             }
-//         }
-//         req.onerror = function() {
-//             reject(Errpr("Network error"));
-//         }
-//         req.send();
-//     })
-// }
-// get('/plants').then(function(response) {
-//     console.log(JSON.parse(response));
-// }), function (err) {
-
-// }
-
-
-// function postPlant() {
-//     let plant = new Plant();
-//     plant.append("plantId", document.getElementById("plant.name"),value);
-//     plant.append("name", document.getElementById("name").value);
-
-//     fetch("/plants". {
-//         method: "POST",
-//         body: plant
-//     }).then((result) => {
-//         if (result.status != 200) {
-//             throw new Error("Bad Server Response");
-//         }
-//         console.log(result.text());
-//     }).catch((error) => { console.log(error); })
-//     return false;
-// }

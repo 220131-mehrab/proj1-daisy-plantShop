@@ -77,7 +77,7 @@ public class App {
                 Plant newPlant = mapper.readValue(req.getInputStream(), Plant.class);
                 System.out.println(newPlant);
                 try {
-                    PreparedStatement stmt = connection.prepareStatement("insert into 'plant' values (?, ?)");
+                    PreparedStatement stmt = connection.prepareStatement("insert into plant values (?, ?)");
                     stmt.setInt(1, newPlant.getPlantId());
                     stmt.setString(2, newPlant.getName());
                     stmt.executeUpdate();
