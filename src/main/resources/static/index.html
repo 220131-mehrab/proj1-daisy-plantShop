@@ -7,6 +7,12 @@
 </head>
 <body>
     <h1>Welcome to the Plant Shop</h1>
+    <form action="/plants" method="post" onsubmit="postPlant()">
+        Id: <input type="number" name="plantsId" id="plantId"/>
+        Name: <input type="text" name="name"/>
+        <button type="submit">Add Plant</button>
+        <div id="plants"></div>
+    </form>
     <script src="main.js"></script>
 </body>
 </html>
