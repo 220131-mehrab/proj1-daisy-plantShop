@@ -57,7 +57,7 @@ public class App {
                     throws ServletException, IOException {
                 List<Plant> plants = new ArrayList<>();
                 try {
-                    ResultSet rs = connection.prepareStatement("select * from plants").executeQuery();
+                    ResultSet rs = connection.prepareStatement("select * from plant").executeQuery();
                     while(rs.next()) {
                         plants.add(new Plant(rs.getInt("PlantId"), rs.getString("Name")));
                     }
