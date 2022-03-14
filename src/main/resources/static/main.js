@@ -7,7 +7,7 @@ fetch('/plants').then(resp => resp.json()).then(plants => {
 );
 
 function listPlants(json) {
-    return `${json.map(listPlant).join('\n')}`;
+    return `${json.map(listPlant)}`;
 };
 
 let listPlant = function(plant) {
