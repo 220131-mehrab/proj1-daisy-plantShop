@@ -3,5 +3,5 @@ create table "plant" (
     "name" varchar
 );
 
-insert into "plant" values (1, 'Adensoni');
+insert into "plant" values (1, 'Adensonii');
 insert into "plant" values (2, 'Philodendron Brasil');

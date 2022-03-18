@@ -1,3 +1,46 @@
+h1 {
+    font-family: 'Brush Script MT', cursive;
+    text-align: center;
+    background-color: rgb(103, 163, 103);
+    margin: 30px 530px 30px 530px;
+}
+
 body {
-    background-image: url('favicon.png')
+    font-family: 'Courier New', monospace;
+    background-image: url('favicon.png');
+    background-repeat: no-repeat;
+    background-color: lightgreen;
+    background-position: center top;
+    background-size: 50%;
+    text-align: center;
+}
+
+form {
+    background-color: white;
+    margin: 30px 400px 30px 400px;
+}
+div {
+    background-color: white;
+    margin: 30px 500px 30px 500px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    position: center;
+    text-align: center;
+    border-spacing: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(51, 230, 170, 0.4);
+}
+  
+th:nth-child(even),td:nth-child(even) {
+    background-color: rgba(42, 248, 42, 0.4);
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightseagreen;
 }

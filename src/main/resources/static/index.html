@@ -1,18 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Plant Shop</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <h1>Welcome to the Plant Shop</h1>
-    <form action="/plants" method="post">
-        Id: <input type="number" name="plantId" id="plantId"/>
-        Name: <input type="text" name="name" id="name"/>
-        <button type="button" onclick="postPlant()">Add Plant</button>
-    </form>
-    <div id="plants"></div>
-    <script src="main.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Plant Shop</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+    <body>
+
+        <h1>Welcome to the Plant Shop</h1>
+
+        <form action="/plants" method="post">
+            Id: <input type="number" name="plantId" id="plantId"/>
+            Name: <input type="text" name="name" id="name"/>
+            <button type="button" onclick="postPlant()">Add Plant</button>
+        </form>
+
+        <div id="plants"></div>
+
+        <table>
+            <tr>
+                <th colspan="3">Spring Plants</th>
+            </tr>
+            <tr>
+                <th>Snake Plant</th>
+                <th>African Violet</th>
+                <th>Bamboo</th>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="3">Summer Plants</th>
+            </tr>
+            <tr>
+                <th>Pothos</th>
+                <th>Aloe Vera</th>
+                <th>Succulent</th>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="3">Fall Plants</th>
+            </tr>
+            <tr>
+                <th>Philodendron Brasil</th>
+                <th>Philodendron</th>
+                <th>Adensonii</th>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>Winter Plants</th>
+            </tr>
+            <tr>
+                <th>Spider Plant</th>
+            </tr>
+        </table>
+
+        <script src="main.js"></script>
+    </body>
 </html>
